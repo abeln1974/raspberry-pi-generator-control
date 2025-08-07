@@ -149,6 +149,10 @@ See `RASPBERRY_PI_DEPLOYMENT_GUIDE.md` for comprehensive setup instructions, tro
 4. **Serial:** USR device to generator controller (RS232 cable)
 5. **WiFi:** Preserved for remote SSH access
 
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ---
 
 **Generator Control System - Complete solution for Raspberry Pi generator monitoring and control**
