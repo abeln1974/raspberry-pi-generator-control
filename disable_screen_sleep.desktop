@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Disable Screen Sleep
+Comment=Prevent screen from turning off or going to sleep
+Exec=sh -c "xset s off; xset s noblank; xset -dpms"
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true

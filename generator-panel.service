@@ -1,0 +1,20 @@
+[Unit]
+Description=Generator Control Panel Kiosk Service
+After=graphical-session.target
+Wants=graphical-session.target
+
+[Service]
+Type=simple
+User=lars
+Group=lars
+Environment=DISPLAY=:0
+ExecStartPre=/bin/bash -c 'until pgrep -x "Xorg"; do sleep 1; done'
+ExecStartPre=/bin/sleep 5
+ExecStart=/usr/bin/python3 /home/lars/raspberry_pi_generator_control.py
+Restart=always
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=graphical.target

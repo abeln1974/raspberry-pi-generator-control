@@ -1,0 +1,21 @@
+[Unit]
+Description=Generator Control Panel Kiosk Service (Wayland)
+After=graphical-session.target
+Wants=graphical-session.target
+
+[Service]
+Type=simple
+User=lars
+Group=lars
+Environment=DISPLAY=:0
+Environment=WAYLAND_DISPLAY=wayland-0
+ExecStartPre=/bin/bash -c 'until pgrep -f "labwc\|wayfire\|weston"; do sleep 1; done'
+ExecStartPre=/bin/sleep 3
+ExecStart=/usr/bin/python3 /home/lars/raspberry_pi_generator_control.py
+Restart=always
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=graphical.target
